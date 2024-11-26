@@ -18,6 +18,7 @@ namespace WebApi.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Country>().HasIndex(c => c.Name).IsUnique(); //Aqui creo un indice del campo Name para la tabla Countries
         }
 
         #region DbSets
