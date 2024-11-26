@@ -10,7 +10,7 @@ namespace WebApi.DAL
     //Microsoft.EntityFrameworkCore.Design V6.0.22
     public class DataBaseContext : DbContext
     {
-        public DataBaseContext(DbContextOptions<DataBaseContext> options) : base(options) //Asi me conecto a la base de datos por medio de este constructor
+        public DataBaseContext(DbContextOptions<DataBaseContext > options) : base(options) //Asi me conecto a la base de datos por medio de este constructor
         {
             
         }
