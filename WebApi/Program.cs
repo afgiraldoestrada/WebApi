@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApi.DAL;
+using WebApi.Domain.Interfaces;
+using WebApi.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 
 //Línea de código que necesito para configurar la conexion a la base de datos.
 builder.Services.AddDbContext<DataBaseContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+//Contenedor de dependencias
+builder.Services.AddScoped<ICountryService, CountryService>(); //Creando el servicio para poder ser utilizado en el controlador
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
