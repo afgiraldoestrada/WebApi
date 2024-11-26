@@ -7,7 +7,7 @@ namespace WebApi.Domain.Interfaces
     {
         Task<IEnumerable<Country>> GetCountriesAsync(); //Firma del metodo que se encarga de decirle al servicio que liste todos los paises
         Task<Country> CreateCountryAsync(Country country);
-        Task<Country> GetCountryById(Guid id);
+        Task<Country> GetCountryByIdAsync(Guid id);
         Task<Country> EditCountryAsync(Country country);
         Task<Country> DeleteCountryAsync(Guid id);
     }
