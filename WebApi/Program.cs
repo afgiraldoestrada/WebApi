@@ -17,7 +17,7 @@ builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.Re
 
 //Contenedor de dependencias
 builder.Services.AddScoped<ICountryService, CountryService>(); //Creando el servicio para poder ser utilizado en el controlador
-//builder.Services.AddScoped<IStateService, StateService>();
+builder.Services.AddScoped<IStateService, StateService>();
 builder.Services.AddTransient<SeederDB>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
